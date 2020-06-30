@@ -2,7 +2,7 @@
   "name": "react-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "repository": "https://github.com/I-keep-trying/fullstack-anecdotes-part6",
+  "repository": "https://github.com/I-keep-trying/anecdotes-thunk",
   "dependencies": {
     "axios": "^0.19.2",
     "react": "^16.13.1",

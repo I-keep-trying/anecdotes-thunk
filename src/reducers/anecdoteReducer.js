@@ -1,5 +1,4 @@
 const anecdoteReducer = (state = [], { type, payload }) => {
-  console.log('reducer payload', payload)
   switch (type) {
     case 'INIT_ANECDOTES':
       return payload
@@ -9,19 +8,15 @@ const anecdoteReducer = (state = [], { type, payload }) => {
         id: payload.id,
         votes: payload.votes,
       }
-      console.log('reducer newAnecdote', newAnecdote)
       return [...state, newAnecdote]
     case 'VOTE': {
-      const id = payload
-
-      const selectedAnecdote = state.find((n) => n.id === id)
-
+      
       const votedAnecdote = {
-        ...selectedAnecdote,
-        votes: selectedAnecdote.votes + 1,
+        ...payload,
+        votes: payload.votes,
       }
 
-      return state.map((a) => (a.id !== id ? a : votedAnecdote))
+      return state.map((a) => (a.id !== votedAnecdote.id ? a : votedAnecdote))
     }
 
     default:
